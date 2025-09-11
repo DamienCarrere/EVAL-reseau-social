@@ -8,7 +8,7 @@
     background-color: transparent
 }
 
-.navbar .navList {
+.navList {
     flex-direction: row;
     justify-content: space-around;
     display: flex;
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.navbar .navList li a {
+.navItem a {
     display: inline-block;
     padding: 10px 20px;
     background-color: #555;
@@ -27,7 +27,7 @@
     transition: all 0.3s ease;
 }
 
-.navbar .navList li a:hover {
+.navItem a:hover {
     background-color: #00bcd4;
     transform: scale(1.05);
 }
