@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
+=======
+.vite
+.vite/*
+.gitignore
+
+>>>>>>> b629109da8ceb3d1c652de308d6a2071ff344d50
