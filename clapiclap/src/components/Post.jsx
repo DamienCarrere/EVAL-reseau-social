@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Post.css";
 
 const Post = ({
@@ -70,7 +70,7 @@ const Post = ({
 
   // gestion des commentaires
   const handleComment = () => {
-    // je rajouterais plus tard
+    // je rajouterais plus tard ez
   };
 
   return (
