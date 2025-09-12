@@ -1,0 +1,18 @@
+.sort-options {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-options select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #8b0000;
+  cursor: pointer;
+  outline: none;
+}
+
+.sort-options select:focus {
+  outline: none;
+}
