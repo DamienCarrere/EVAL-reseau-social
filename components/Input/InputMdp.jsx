@@ -1,16 +1,19 @@
-import { useState } from "react";
+import "./Input.css";
 
-export default function InputMdp() {
-	const [mdp, setMdp] = useState("");
+export default function InputMdp({ value, onChange, placeholder }) {
 	return (
 		<>
-			<label htmlFor="mdp">Mot de passe :</label>
+			<label htmlFor="password" className="label-connexion">
+				Mot de passe :
+			</label>
 			<input
+				className="input-connexion"
 				name="mdp"
 				type="password"
 				id="password"
-				value={mdp}
-				onChange={(e) => setMdp(e.target.value)}
+				value={value}
+				onChange={onChange}
+				placeholder={placeholder || "Mot de passe"}
 			/>
 		</>
 	);
