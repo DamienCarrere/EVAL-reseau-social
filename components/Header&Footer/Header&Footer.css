@@ -4,6 +4,7 @@
     background-color: #9e0e40;
     color: #FFFFB8;
     text-align: center;
+    position: relative;
 }
 
 .footer {
@@ -18,4 +19,14 @@
 
 #footerText {
     display: none;
+}
+
+@media (min-width: 790px) {
+    .footer {
+        position: relative;
+    }
+
+    .header {
+        position: fixed;
+    }
 }
