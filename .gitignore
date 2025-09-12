@@ -16,4 +16,4 @@ dist-ssr
 .vite
 .vite/*
 .gitignore
-public/*
+
