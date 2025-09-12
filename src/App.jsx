@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GetData from "../components/getData";
 import Header from "../components/Header&Footer/Header";
 import Accueil from "../pages/Accueil";
 import Footer from "../components/Header&Footer/Footer";
@@ -10,7 +11,7 @@ function App() {
 			<BrowserRouter>
 				<Header />
 				<Routes>
-					<Route path="/" element={<Accueil />} />
+					<Route path="/" element={<GetData />} />
 					<Route path="/search" element={"Search"} />
 					<Route path="/disconnect" element={"Disconnect"} />
 					<Route path="/profile" element={"Profile"} />
