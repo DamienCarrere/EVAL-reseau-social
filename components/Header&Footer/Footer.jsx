@@ -1,7 +1,11 @@
-export default function Header() {
+import NavBar from "../Navbar/NavBar";
+import "./Header&Footer.css";
+
+export default function Footer() {
 	return (
-		<header className="footer">
-			<p>© ClapiClap 2025, All Rights Reserved.</p>
-		</header>
+		<footer className="footer">
+			<NavBar />
+			<p id="footerText">© ClapiClap 2025, All Rights Reserved.</p>
+		</footer>
 	);
 }

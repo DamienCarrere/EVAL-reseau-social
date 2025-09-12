@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    padding-top: 5rem;
+    background-color: #9e0e40;
+    color: #FFFFB8;
+    text-align: center;
+}
+
+.footer {
+    width: 100%;
+    padding-top: 5rem;
+    background-color: #9e0e40;
+    color: #FFFFB8;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+#footerText {
+    display: none;
+}
