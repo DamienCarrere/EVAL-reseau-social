@@ -10,7 +10,7 @@ function App() {
 				<Header />
 				<NavBar />
 				<Routes>
-					<Route path="/" element={<Accueil />} />
+					<Route path="/" element={"Home"} />
 					<Route path="/search" element={"Search"} />
 					<Route path="/disconnect" element={"Disconnect"} />
 					<Route path="/profile" element={"Profile"} />
