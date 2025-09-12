@@ -9,7 +9,7 @@ export const useUsers = () => {
   const fetchUsers = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch("https://dummyjson.com/users?limit=100");
+      const response = await fetch("https://dummyjson.com/users?limit=30");
       if (!response.ok)
         throw new Error("Erreur lors de la récupération des utilisateurs");
       const data = await response.json();
