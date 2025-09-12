@@ -9,7 +9,6 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Header />
-				<Footer />
 				<Routes>
 					<Route path="/" element={<Accueil />} />
 					<Route path="/search" element={"Search"} />
@@ -17,6 +16,7 @@ function App() {
 					<Route path="/profile" element={"Profile"} />
 					<Route path="*" element={"Error 404"} />
 				</Routes>
+				<Footer />
 			</BrowserRouter>
 		</>
 	);
