@@ -45,7 +45,7 @@ export const useUsers = () => {
 
   const createGenericUser = (userId) => {
     console.warn(
-      `Utilisateur avec ID ${userId} non trouvé, création d'un utilisateur générique`
+      `Utilisateur avec ID ${userId} non trouvé, création d'un utilisateur lambda`
     );
     return {
       id: userId,
