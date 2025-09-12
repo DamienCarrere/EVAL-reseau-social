@@ -7,7 +7,7 @@ import Post from "../components/Posts/Post";
 import SearchBar from "../components/Search/SearchBar";
 import SortOptions from "../components/Posts/SortOptions";
 import SearchResults from "../components/Search/SearchResults";
-import LoadingError from "../layouts/LoadingError";
+import LoadingError from "../components/Posts/Erreurs/LoadingError";
 import "./Accueil.css";
 
 const Accueil = () => {
