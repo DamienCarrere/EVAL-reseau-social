@@ -1,33 +1,40 @@
+.svg-icon {
+  fill: white;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
 .navbar {
-    padding: 1.5em;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: transparent
+  padding: 1.5em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
 }
 
 .navList {
-    flex-direction: row;
-    justify-content: space-around;
-    display: flex;
-    list-style: none;
-    align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  display: flex;
+  list-style: none;
+  align-items: center;
 }
 
 .navItem a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #555;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
 .navItem a:hover {
-    background-color: #00bcd4;
-    transform: scale(1.05);
+  background-color: #00bcd4;
+  transform: scale(1.05);
 }
