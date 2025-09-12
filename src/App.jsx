@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "../components/Header&Footer/Header";
+import Accueil from "../pages/Accueil";
 import Footer from "../components/Header&Footer/Footer";
 import "./App.css";
 
@@ -8,10 +9,9 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Header />
-				<main></main>
 				<Footer />
 				<Routes>
-					<Route path="/" element={"Home"} />
+					<Route path="/" element={<Accueil />} />
 					<Route path="/search" element={"Search"} />
 					<Route path="/disconnect" element={"Disconnect"} />
 					<Route path="/profile" element={"Profile"} />

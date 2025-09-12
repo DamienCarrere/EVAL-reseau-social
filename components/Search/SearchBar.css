@@ -1,0 +1,32 @@
+.search-bar {
+  flex: 1;
+  max-width: 500px;
+  margin: 40px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.search-results-container {
+  padding-bottom: 15px;
+  background: white;
+  border-radius: 25px;
+}
+
+.search-results-container h2 {
+  font-size: 1.2rem;
+}
