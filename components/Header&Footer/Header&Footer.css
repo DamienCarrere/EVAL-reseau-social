@@ -5,6 +5,7 @@
     color: #FFFFB8;
     text-align: center;
     position: relative;
+    z-index: 666;
 }
 
 .footer {

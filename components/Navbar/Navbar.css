@@ -1,5 +1,5 @@
 .navbar {
-
+    z-index: 777;
     display: block;
     height: 5rem;
     position: fixed;
@@ -66,4 +66,3 @@ a:hover {
     }
 
 }
-
