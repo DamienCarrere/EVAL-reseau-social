@@ -9,6 +9,7 @@ function App() {
 			<BrowserRouter>
 				<Header />
 				<NavBar />
+				<Footer />
 				<Routes>
 					<Route path="/" element={"Home"} />
 					<Route path="/search" element={"Search"} />
