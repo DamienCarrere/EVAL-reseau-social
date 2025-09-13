@@ -9,13 +9,15 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Header />
-				<Routes>
-					<Route path="/" element={<Accueil />} />
-					<Route path="/search" element={"Search"} />
-					<Route path="/disconnect" element={"Disconnect"} />
-					<Route path="/profile" element={"Profile"} />
-					<Route path="*" element={"Error 404"} />
-				</Routes>
+				<main>
+					<Routes>
+						<Route path="/" element={<Accueil />} />
+						<Route path="/search" element={"Search"} />
+						<Route path="/disconnect" element={"Disconnect"} />
+						<Route path="/profile" element={"Profile"} />
+						<Route path="*" element={"Error 404"} />
+					</Routes>
+				</main>
 				<Footer />
 			</BrowserRouter>
 		</>
