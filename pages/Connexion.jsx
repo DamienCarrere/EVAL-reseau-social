@@ -4,13 +4,13 @@ import InputPseudo from "../components/Input/InputPseudo";
 import InputMdp from "../components/Input/InputMdp";
 import CheckBoxRemember from "../components/Input/CheckBoxRemember";
 import { useEffect, useState } from "react";
-import getData from "../API/getData";
+import useUserData from "../API/useUserData";
 
 function Connexion() {
 	const [pseudo, setPseudo] = useState("");
 	const [mdp, setMdp] = useState("");
 	const [remember, setRemember] = useState(false);
-	const getUser = getData();
+	const getUser = useUserData();
 
 	useEffect(() => {
 		const saveUser = localStorage.getItem("pseudo");
