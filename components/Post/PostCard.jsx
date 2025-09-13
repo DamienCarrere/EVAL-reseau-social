@@ -27,7 +27,7 @@ export default function PostCard({ user, post }) {
 				<span>Vues: {post.views}</span>
 				<div className="divButtons">
 					<button>💬</button>
-					<button>🔗</button>
+					<button>🔁</button>
 					<button>👍 {post.reactions.likes}</button>
 					<button>👎 {post.reactions.dislikes}</button>
 				</div>
