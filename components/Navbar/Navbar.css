@@ -1,7 +1,7 @@
 .navbar {
     z-index: 777;
     display: block;
-    height: 5rem;
+    height: 10vh;
     position: fixed;
     bottom: 0;
     left: 0;
