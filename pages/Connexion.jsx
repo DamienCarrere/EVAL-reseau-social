@@ -36,7 +36,7 @@ function Connexion() {
 				localStorage.removeItem("pseudo"); // suprimer du localestorage si la case et decocher
 			}
 		} else {
-			console.log("identifiant invalide ");
+			alert("Identifiant invalide ");
 		}
 
 		const formDate = {
@@ -44,6 +44,7 @@ function Connexion() {
 			mdp,
 			remember,
 		};
+		console.log(formDate);
 	};
 
 	return (
