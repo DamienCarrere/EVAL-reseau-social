@@ -10,59 +10,57 @@
 }
 
 .navList {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	list-style: none;
 }
 
 .navItem {
-    flex: 1;
+	flex: 1;
 }
 
 a {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    transition: all 0.3s ease;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	transition: all 0.3s ease;
 }
 
-
 a:hover {
-    background-color: #00bcd4;
-    transform: scale(1.05);
+	background-color: #00bcd4;
+	transform: scale(1.05);
 }
 
 .svg-icon {
-    height: 20px;
-    width: 20px;
+	height: 20px;
+	width: 20px;
 }
 
 .footerHide {
-    display: none;
+	display: none;
 }
 
 @media (min-width: 790px) {
-    .navbar {
-        top: 0;
-        left: unset;
-        right: 0;
-        width: 60%;
-    }
+	.navbar {
+		top: 0;
+		left: unset;
+		right: 0;
+		width: 60%;
+	}
 
-    a {
-        display: flex;
-        flex-direction: column;
-    }
+	a {
+		display: flex;
+		flex-direction: column;
+	}
 
-    .footerHide {
-        text-decoration: none;
-        color: #ffff00;
-        padding-left: 5px;
-        display: block;
-    }
-
+	.footerHide {
+		text-decoration: none;
+		color: #ffff00;
+		padding-left: 5px;
+		display: block;
+	}
 }

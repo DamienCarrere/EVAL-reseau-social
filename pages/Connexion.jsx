@@ -3,15 +3,41 @@ import BtnConnexion from "../components/Buttons/ButtonConnexion";
 import InputPseudo from "../components/Input/InputPseudo";
 import InputMdp from "../components/Input/InputMdp";
 import CheckBoxRemember from "../components/Input/CheckBoxRemember";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import getData from "../API/getData";
 
 function Connexion() {
 	const [pseudo, setPseudo] = useState("");
 	const [mdp, setMdp] = useState("");
 	const [remember, setRemember] = useState(false);
+	const getUser = getData();
+
+	useEffect(() => {
+		const saveUser = localStorage.getItem("pseudo");
+		if (saveUser) {
+			setPseudo(saveUser);
+			setRemember(true);
+		}
+	}, []);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		// au click requette pour savoir si pseudo et mdp son dans l'api
+		const userFound = getUser.find(
+			(u) => u.username === pseudo && u.password === mdp
+		);
+		if (userFound) {
+			console.log("connexion réussi :" + userFound);
+
+			if (remember) {
+				localStorage.setItem("pseudo", pseudo);
+			} else {
+				localStorage.removeItem("pseudo"); // suprimer du localestorage si la case et decocher
+			}
+		} else {
+			alert("Identifiant invalide ");
+		}
 
 		const formDate = {
 			pseudo,
