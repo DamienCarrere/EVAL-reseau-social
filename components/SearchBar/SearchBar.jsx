@@ -1,22 +1,32 @@
 import { useState } from "react";
 import useUserData from "../../API/useUserData";
+import InputControl from "./SearchBarComponents/InputControl";
+import SearchFilter from "./SearchBarComponents/SearchFilter";
+import "./SearchBar.css";
 
 export default function SearchBar() {
 	const users = useUserData();
 	const [entry, setEntry] = useState("");
+	const [filteredData, setFilteredData] = useState([]);
 
 	const handleInputChange = (e) => {
 		const searchTerm = e.target.value;
-		console.log("Search term: ", searchTerm);
+		setEntry(searchTerm);
+		if (searchTerm.trim() === "") {
+			setFilteredData([]);
+			return;
+		}
+
+		const filteredUsers = users.filter((user) =>
+			user.username.toLowerCase().includes(searchTerm.toLowerCase())
+		);
+		setFilteredData(filteredUsers);
 	};
 
 	return (
-		<div>
-			<input
-				type="text"
-				placeholder="Rechercher un utilisateur..."
-				onChange={handleInputChange}
-			/>
+		<div className="search-bar">
+			<InputControl handleInput={handleInputChange} searchItem={entry} />
+			<SearchFilter filteredData={filteredData} handleClick={setEntry} />
 		</div>
 	);
 }
