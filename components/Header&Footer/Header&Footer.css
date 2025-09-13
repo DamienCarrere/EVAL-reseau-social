@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    padding-top: 5rem;
+    height: 10vh;
     background-color: #9e0e40;
     color: #FFFFB8;
     text-align: center;
@@ -10,7 +10,7 @@
 
 .footer {
     width: 100%;
-    padding-top: 5rem;
+    height: 10vh;
     background-color: #9e0e40;
     color: #FFFFB8;
     text-align: center;
