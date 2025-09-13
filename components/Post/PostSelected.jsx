@@ -2,7 +2,7 @@ import useUserData from "../../API/useUserData";
 import usePostData from "../../API/usePostData";
 import PostCard from "./PostCard";
 
-export default function PostList({ userSelect }) {
+export default function PostSelected({ userSelect }) {
 	const users = useUserData();
 	const posts = usePostData();
 	if (!posts.length || !users.length) {
