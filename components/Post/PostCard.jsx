@@ -9,7 +9,11 @@ export default function PostCard({ user, post }) {
 		<section className="sectionCard">
 			<div className="card">
 				<div className="divImg">
-					<img src={user.image} alt={user.firstName}></img>
+					<img
+						src={user.image}
+						alt={user.firstName}
+						className="imgProfile"
+					></img>
 				</div>
 				<div className="divInfo">
 					<p className="username">{user.username}</p>

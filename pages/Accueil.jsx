@@ -1,8 +1,7 @@
 import PostList from "../components/Post/PostList";
-import PostCard from "../components/Post/PostCard";
 import useUserData from "../API/useUserData";
 import usePostData from "../API/usePostData";
-import PostSelected from "../components/Post/PostSelected";
+import "./Accueil.css";
 
 export default function Accueil() {
 	const users = useUserData();
@@ -11,7 +10,7 @@ export default function Accueil() {
 		return <p>Chargement...</p>;
 	}
 	return (
-		<div>
+		<div className="accueil">
 			<PostList />
 			{/* <PostSelected userSelect={2} /> */}
 		</div>
