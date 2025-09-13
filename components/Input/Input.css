@@ -1,0 +1,17 @@
+.input-connexion {
+	border-radius: 5px;
+	height: 25px;
+}
+
+.label-connexion {
+	width: 100%;
+	font-size: 15px;
+}
+
+.remember {
+	font-size: 10px;
+	display: flex;
+	width: 80%;
+	justify-content: space-around;
+	padding: 10px;
+}

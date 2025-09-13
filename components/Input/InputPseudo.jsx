@@ -1,16 +1,19 @@
-import { useState } from "react";
+import "./Input.css";
 
-export default function InputPseudo() {
-	const [pseudo, setPseudo] = useState("");
+export default function InputPseudo({ value, onChange, placeholder }) {
 	return (
 		<>
-			<label>Pseudo :</label>
+			<label htmlFor="pseudo" className="label-connexion">
+				Pseudo :
+			</label>
 			<input
+				className="input-connexion"
 				name="pseudo"
 				type=""
 				id="pseudo"
-				value={pseudo}
-				onChange={(e) => setPseudo(e.target.value)}
+				value={value}
+				onChange={onChange}
+				placeholder={placeholder || "Nom utilisateur"}
 			/>
 		</>
 	);
