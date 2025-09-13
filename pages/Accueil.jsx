@@ -1,18 +1,18 @@
-import GetData from "../components/getData";
+import getData from "../API/getData";
 
-export default function Accueil({ data = [] }) {
-	console.log(data);
+export default function Accueil() {
+	const data = getData();
+	if (!data.length) {
+		return <p>Chargement...</p>;
+	}
 
 	return (
 		<div>
 			<h1>Test</h1>
-			{data.length > 0 ? (
-				<li>
-					<img src={data[1].image} alt="Profile" />
-				</li>
-			) : (
-				<p>Chargement...</p>
-			)}
+
+			<li>
+				<img src={data[2].image} alt="Profile" />
+			</li>
 		</div>
 	);
 }
