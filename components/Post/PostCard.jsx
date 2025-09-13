@@ -1,25 +1,27 @@
+import "./PostCard.css";
+
 export default function PostCard({ user, post }) {
 	if (!post || !user) {
 		return <p>Chargement...</p>;
 	}
 
 	return (
-		<section>
-			<div>
-				<div>
+		<section className="sectionCard">
+			<div className="card">
+				<div className="divImg">
 					<img src={user.image} alt={user.firstName}></img>
 				</div>
-				<div>
-					<p>{user.username}</p>
-					<p>{post.title}</p>
+				<div className="divInfo">
+					<p className="username">{user.username}</p>
+					<p className="title">{post.title}</p>
 				</div>
 			</div>
-			<div>
+			<div className="divPost">
 				<p>{post.body}</p>
 			</div>
-			<div>
+			<div className="divReactions">
 				<span>Vues: {post.views}</span>
-				<div>
+				<div className="divButtons">
 					<button>💬</button>
 					<button>🔗</button>
 					<button>👍 {post.reactions.likes}</button>
