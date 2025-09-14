@@ -11,7 +11,6 @@ export default function getPostData() {
 				...post,
 				userId: (idx % 30) + 1,
 			}));
-			console.log("posts fetched: ", postsFixedForID);
 			setData(postsFixedForID);
 		};
 		fetchData();
