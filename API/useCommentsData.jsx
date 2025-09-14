@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useUserData() {
+export default function useCommentsData() {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {

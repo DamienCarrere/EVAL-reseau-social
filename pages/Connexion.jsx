@@ -5,12 +5,14 @@ import InputMdp from "../components/Input/InputMdp";
 import CheckBoxRemember from "../components/Input/CheckBoxRemember";
 import { useEffect, useState } from "react";
 import useUserData from "../API/useUserData";
+import { useNavigate } from "react-router-dom";
 
-function Connexion() {
+function Connexion({ setIsLogIn }) {
 	const [pseudo, setPseudo] = useState("");
 	const [mdp, setMdp] = useState("");
 	const [remember, setRemember] = useState(false);
 	const getUser = useUserData();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const saveUser = localStorage.getItem("pseudo");
@@ -35,6 +37,9 @@ function Connexion() {
 			} else {
 				localStorage.removeItem("pseudo"); // suprimer du localestorage si la case et decocher
 			}
+			localStorage.setItem("userID", userFound.id);
+			setIsLogIn(true);
+			navigate("/");
 		} else {
 			alert("Identifiant invalide ");
 		}
@@ -59,7 +64,7 @@ function Connexion() {
 					onChange={(e) => setMdp(e.target.value)}
 				/>
 				<CheckBoxRemember
-					value={remember}
+					checked={remember}
 					onChange={(e) => setRemember(e.target.checked)}
 				/>
 				<BtnConnexion />

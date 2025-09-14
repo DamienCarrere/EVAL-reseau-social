@@ -7,7 +7,9 @@ import { useContext } from "react";
 function MyProfile() {
 	const { followers } = useContext(FollowContext);
 	const users = useUserData();
-	const user = users[26];
+	const storedID = localStorage.getItem("userID");
+	const userID = storedID ? parseInt(storedID, 10) : null;
+	const user = users.find((u) => u.id === userID);
 
 	if (!user) return <p>Chargement...</p>;
 
