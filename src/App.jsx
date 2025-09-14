@@ -6,22 +6,40 @@ import Connexion from "../pages/Connexion";
 import MyProfile from "../pages/profile/MyProfile";
 import OtherProfil from "../pages/OtherProfil";
 import "./App.css";
+import { Navigate } from "react-router-dom";
 
 function App() {
+	const isLogIn = !!localStorage.getItem("userID");
+
 	return (
 		<>
 			<BrowserRouter>
 				<Header />
+
 				<main>
 					<Routes>
-						<Route path="/" element={<Connexion />} />
-						<Route path="/search" element={<Accueil />} />
-						<Route path="/disconnect" element={"test"} />
-						<Route path="/profile" element={<MyProfile />} />
-						<Route path="*" element={"Error 404"} />
-						<Route path="/otherProfil" element={<OtherProfil />} />
+						{!isLogIn ? (
+							<>
+								<Route path="/" element={<Connexion />} />
+								<Route path="*" element={<Navigate to="/" />} />
+							</>
+						) : (
+							<>
+								<Route path="/search" element={<Accueil />} />
+								<Route
+									path="/profile"
+									element={<MyProfile />}
+								/>
+								<Route
+									path="/otherProfil"
+									element={<OtherProfil />}
+								/>
+								<Route path="*" element={"Error 404"} />
+							</>
+						)}
 					</Routes>
 				</main>
+
 				<Footer />
 			</BrowserRouter>
 		</>
