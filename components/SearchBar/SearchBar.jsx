@@ -8,8 +8,9 @@ export default function SearchBar() {
 	const users = useUserData();
 	const [entry, setEntry] = useState("");
 	const [filteredData, setFilteredData] = useState([]);
+	const [posts, setPosts] = useState([]);
 
-	const handleInputChange = (e) => {
+	const inputChange = (e) => {
 		const searchTerm = e.target.value;
 		setEntry(searchTerm);
 		if (searchTerm.trim() === "") {
@@ -25,7 +26,7 @@ export default function SearchBar() {
 
 	return (
 		<div className="search-bar">
-			<InputControl handleInput={handleInputChange} searchItem={entry} />
+			<InputControl handleInput={inputChange} searchItem={entry} />
 			<SearchFilter filteredData={filteredData} handleClick={setEntry} />
 		</div>
 	);
