@@ -1,8 +1,8 @@
 import PostList from "../components/Post/PostList";
-import PostCard from "../components/Post/PostCard";
 import useUserData from "../API/useUserData";
 import usePostData from "../API/usePostData";
-import PostSelected from "../components/Post/PostSelected";
+import "./Accueil.css";
+import SearchBar from "../components/SearchBar/SearchBar";
 
 export default function Accueil() {
 	const users = useUserData();
@@ -11,7 +11,8 @@ export default function Accueil() {
 		return <p>Chargement...</p>;
 	}
 	return (
-		<div>
+		<div className="accueil">
+			<SearchBar />
 			<PostList />
 			{/* <PostSelected userSelect={2} /> */}
 		</div>

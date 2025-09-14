@@ -1,0 +1,48 @@
+.search-bar {
+    position: relative;
+}
+
+.input-file {
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.item-list {
+    position: absolute;
+    height: 250px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.item-list ul {
+    list-style: none;
+}
+
+.item-list ul li {
+
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.item-list ul li:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.imgList {
+    height: 40px;
+    width: 40px;
+}
+
+.item-list:has(ul:empty) {
+    display: none;
+}
