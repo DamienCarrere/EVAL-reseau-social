@@ -26,10 +26,14 @@ export default function PostCard({ user, post }) {
 			<div className="divReactions">
 				<span>Vues: {post.views}</span>
 				<div className="divButtons">
-					<button>💬</button>
-					<button>🔁</button>
-					<button>👍 {post.reactions.likes}</button>
-					<button>👎 {post.reactions.dislikes}</button>
+					<button className="button-post">💬</button>
+					<button className="button-post">🔁</button>
+					<button className="button-post">
+						👍 {post.reactions.likes}
+					</button>
+					<button className="button-post">
+						👎 {post.reactions.dislikes}
+					</button>
 				</div>
 			</div>
 		</section>
