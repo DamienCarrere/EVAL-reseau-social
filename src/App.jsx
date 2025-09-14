@@ -7,9 +7,10 @@ import MyProfile from "../pages/profile/MyProfile";
 import OtherProfil from "../pages/OtherProfil";
 import "./App.css";
 import { Navigate } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
-	const isLogIn = !!localStorage.getItem("userID");
+	const [isLogIn, setIsLogIn] = useState(!!localStorage.getItem("userID"));
 
 	return (
 		<>
@@ -20,12 +21,17 @@ function App() {
 					<Routes>
 						{!isLogIn ? (
 							<>
-								<Route path="/" element={<Connexion />} />
+								<Route
+									path="/"
+									element={
+										<Connexion setIsLogIn={setIsLogIn} />
+									}
+								/>
 								<Route path="*" element={<Navigate to="/" />} />
 							</>
 						) : (
 							<>
-								<Route path="/search" element={<Accueil />} />
+								<Route path="/" element={<Accueil />} />
 								<Route
 									path="/profile"
 									element={<MyProfile />}
