@@ -1,6 +1,7 @@
 import useUserData from "../../API/useUserData";
 import PostSelected from "../../components/Post/PostSelected";
 import ProfileLayout from "../../components/Layout/ProfileLayout";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 function MyProfile() {
 	const users = useUserData();
@@ -10,6 +11,7 @@ function MyProfile() {
 
 	return (
 		<>
+			<SearchBar />
 			<ProfileLayout user={user}>
 				<p className="p-suivi">suivi :</p>
 			</ProfileLayout>
