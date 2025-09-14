@@ -9,7 +9,7 @@ export default function getPostData() {
 			const result = await response.json();
 			const postsFixedForID = result.posts.map((post, idx) => ({
 				...post,
-				userId: (idx % 30) + 1,
+				userId: (idx % 50) + 1,
 			}));
 			setData(postsFixedForID);
 		};
