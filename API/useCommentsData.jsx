@@ -11,7 +11,7 @@ export default function useCommentsData() {
 			const result = await response.json();
 			const commentsFixedForID = result.comments.map((comment, idx) => ({
 				...comment,
-				postId: (idx % 30) + 1,
+				postId: (idx % 251) + 1,
 			}));
 			console.log("comments fetched: ", commentsFixedForID);
 			setData(commentsFixedForID);
