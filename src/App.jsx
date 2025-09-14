@@ -46,7 +46,7 @@ function App() {
 					</Routes>
 				</main>
 
-				<Footer />
+				<Footer setIsLogIn={setIsLogIn} isLogIn={isLogIn} />
 			</BrowserRouter>
 		</>
 	);
