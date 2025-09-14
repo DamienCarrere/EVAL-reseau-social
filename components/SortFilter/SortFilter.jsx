@@ -1,29 +1,41 @@
-import { useState } from "react";
+import "./SortFilter.css";
 
-export default function SortFilter() {
-	const [order, setOrder] = useState("descendant");
+export default function SortFilter({ posts, onSort }) {
+	const sortChange = (e) => {
+		const value = e.target.value;
+		let sorted = [...posts];
 
-	const handleChange = (e) => {
-		setOrder(e.target.value);
+		switch (value) {
+			case "views-asc":
+				sorted.sort((a, b) => a.views - b.views);
+				break;
+			case "views-desc":
+				sorted.sort((a, b) => b.views - a.views);
+				break;
+			case "likes-asc":
+				sorted.sort((a, b) => a.reactions.likes - b.reactions.likes);
+				break;
+			case "likes-desc":
+				sorted.sort((a, b) => b.reactions.likes - a.reactions.likes);
+				break;
+			default:
+				break;
+		}
 
-		const sortedPosts = [...posts].sort((a, b) => {
-			if (e.target.value === "ascendant") {
-				return a.views - b.views;
-			} else {
-				return b.views - a.views;
-			}
-		});
-		onSort(sortedPosts);
+		onSort(sorted);
 	};
 
 	return (
 		<div>
-			<label>Trier par:</label>
-			<select value={order} onChange={handleChange}>
-				<option value="descendant">
-					↓ Nombres de vues décroissantes
+			<label htmlFor="sortSelect">Trier par :</label>
+			<select id="sortSelect" onChange={sortChange} defaultValue="">
+				<option value="" disabled>
+					-- Choisir un tri --
 				</option>
-				<option value="ascendant">↑ Nombres de vues croissantes</option>
+				<option value="views-asc">↑ Vues (croissant) ↑</option>
+				<option value="views-desc">↓ Vues (décroissant) ↓</option>
+				<option value="likes-asc">↑ Likes (croissant) ↑</option>
+				<option value="likes-desc">↓ Likes (décroissant) ↓</option>
 			</select>
 		</div>
 	);

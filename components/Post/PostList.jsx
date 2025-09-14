@@ -1,10 +1,6 @@
-import useUserData from "../../API/useUserData";
-import usePostData from "../../API/usePostData";
 import PostCard from "./PostCard";
 
-export default function PostList() {
-	const users = useUserData();
-	const posts = usePostData();
+export default function PostList({ posts, users }) {
 	if (!posts.length || !users.length) {
 		return <p>Chargement...</p>;
 	}
