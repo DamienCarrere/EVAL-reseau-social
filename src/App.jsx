@@ -14,9 +14,9 @@ function App() {
 				<Header />
 				<main>
 					<Routes>
-						<Route path="/" element={<Accueil />} />
-						<Route path="/search" element={"Search"} />
-						<Route path="/disconnect" element={<Connexion />} />
+						<Route path="/" element={<Connexion />} />
+						<Route path="/search" element={<Accueil />} />
+						<Route path="/disconnect" element={"test"} />
 						<Route path="/profile" element={<MyProfile />} />
 						<Route path="*" element={"Error 404"} />
 						<Route path="/otherProfil" element={<OtherProfil />} />

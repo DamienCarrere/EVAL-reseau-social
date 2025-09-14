@@ -8,7 +8,6 @@ export default function SearchBar() {
 	const users = useUserData();
 	const [entry, setEntry] = useState("");
 	const [filteredData, setFilteredData] = useState([]);
-	const [posts, setPosts] = useState([]);
 
 	const inputChange = (e) => {
 		const searchTerm = e.target.value;

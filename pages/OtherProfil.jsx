@@ -7,7 +7,7 @@ import { useContext, useEffect, useState } from "react";
 function OtherProfil() {
 	const { toggleFollow } = useContext(FollowContext);
 	const users = useUserData();
-	const user = users[1];
+	const user = users[6];
 	const [isFollowing, setIsFollowing] = useState(false);
 
 	useEffect(() => {
