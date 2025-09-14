@@ -13,7 +13,7 @@ function MyProfile() {
 			<ProfileLayout user={user}>
 				<p className="p-suivi">suivi :</p>
 			</ProfileLayout>
-			<PostSelected user={user.id} />
+			<PostSelected userSelect={user.id} />
 		</>
 	);
 }
