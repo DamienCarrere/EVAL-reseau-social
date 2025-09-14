@@ -1,34 +1,24 @@
 import useUserData from "../API/useUserData";
 import PostSelected from "../components/Post/PostSelected";
 import ProfileLayout from "../components/Layout/ProfileLayout";
-import SearchBar from "../components/SearchBar/SearchBar";
-import { useState } from "react";
+import { FollowContext } from "../components/FollowContext/FollowContext";
+import { useContext, useState } from "react";
 
 function OtherProfil() {
+	const { toggleFollow } = useContext(FollowContext);
 	const users = useUserData();
 	const user = users[1];
-
 	const [isFollowing, setIsFollowing] = useState(false);
 
 	if (!user) return <p>Chargement...</p>;
 
 	const handleFollow = () => {
-		let current = parseInt(localStorage.getItem("followers"));
-
-		if (isFollowing) {
-			current -= 1;
-			setIsFollowing(false);
-		} else {
-			current += 1;
-			setIsFollowing(true);
-		}
-
-		localStorage.setItem("followers", current);
+		toggleFollow(isFollowing); // met a jour le compteur
+		setIsFollowing(!isFollowing); // met a jour le boutton
 	};
 
 	return (
 		<>
-			<SearchBar />
 			<ProfileLayout user={user}>
 				<button onClick={handleFollow}>
 					{isFollowing ? "Unfollow" : "Follow"}
