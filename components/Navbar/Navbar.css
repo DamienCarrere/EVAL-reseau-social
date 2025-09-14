@@ -1,12 +1,12 @@
 .navbar {
-    z-index: 777;
-    display: block;
-    height: 10vh;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
+	z-index: 777;
+	display: block;
+	height: 10vh;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .navList {
@@ -21,7 +21,9 @@
 	flex: 1;
 }
 
-a {
+a,
+span {
+	cursor: pointer;
 	text-decoration: none;
 	display: flex;
 	justify-content: center;
@@ -30,7 +32,8 @@ a {
 	transition: all 0.3s ease;
 }
 
-a:hover {
+a:hover,
+span:hover {
 	background-color: #00bcd4;
 	transform: scale(1.05);
 }
