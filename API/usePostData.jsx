@@ -5,7 +5,7 @@ export default function getPostData() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch("https://dummyjson.com/posts");
+			const response = await fetch("https://dummyjson.com/posts?limit=0");
 			const result = await response.json();
 			const postsFixedForID = result.posts.map((post, idx) => ({
 				...post,
