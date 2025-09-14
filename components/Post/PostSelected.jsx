@@ -9,7 +9,7 @@ export default function PostSelected({ userSelect }) {
 		return <p>Chargement...</p>;
 	}
 
-	const userFilter = posts.filter((user) => user.id === userSelect);
+	const userFilter = posts.filter((post) => post.userId === userSelect);
 
 	return (
 		<div>

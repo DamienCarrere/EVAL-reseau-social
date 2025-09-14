@@ -1,6 +1,7 @@
 import useUserData from "../../API/useUserData";
 import PostSelected from "../../components/Post/PostSelected";
-import "./MyProfile.css";
+import ProfileLayout from "../../components/Layout/ProfileLayout";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 function MyProfile() {
 	const users = useUserData();
@@ -9,27 +10,13 @@ function MyProfile() {
 	if (!user) return <p>Chargement...</p>;
 
 	return (
-		<section>
-			<div className="profil-main">
-				<div className="img-profil">
-					<img src={user.image} alt={user.firstName}></img>
-				</div>
-				<div className="infoPlusSuvi">
-					<div className="info-profil">
-						<h2 className="h2-titre">
-							{user.firstName} {user.lastName}
-						</h2>
-						<p className="p-info">{user.age} ans</p>
-						<p className="p-info">{user.email}</p>
-					</div>
-					<div className="suivi">
-						<p className="p-suivi">Suivi : ???</p>
-					</div>
-				</div>
-			</div>
-
+		<>
+			<SearchBar />
+			<ProfileLayout user={user}>
+				<p className="p-suivi">suivi :</p>
+			</ProfileLayout>
 			<PostSelected userSelect={user.id} />
-		</section>
+		</>
 	);
 }
 
