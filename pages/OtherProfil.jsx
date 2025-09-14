@@ -8,27 +8,31 @@ function OtherProfil() {
 	const users = useUserData();
 	const user = users[1];
 
-	const [follow, setFollow] = useState(false);
-
-	const handleFollow = () => {
-		setFollow(true);
-	};
-
-	const handleUnfollow = () => {
-		setFollow(false);
-	};
+	const [isFollowing, setIsFollowing] = useState(false);
 
 	if (!user) return <p>Chargement...</p>;
+
+	const handleFollow = () => {
+		let current = parseInt(localStorage.getItem("followers"));
+
+		if (isFollowing) {
+			current -= 1;
+			setIsFollowing(false);
+		} else {
+			current += 1;
+			setIsFollowing(true);
+		}
+
+		localStorage.setItem("followers", current);
+	};
 
 	return (
 		<>
 			<SearchBar />
 			<ProfileLayout user={user}>
-				{follow ? (
-					<button onClick={handleUnfollow}>Unfollow</button>
-				) : (
-					<button onClick={handleFollow}>Follow</button>
-				)}
+				<button onClick={handleFollow}>
+					{isFollowing ? "Unfollow" : "Follow"}
+				</button>
 			</ProfileLayout>
 			<PostSelected userSelect={user.id} />
 		</>
