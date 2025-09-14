@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+main {
+	padding-top: unset;
+	padding-bottom: 10vh;
+	min-height: 80vh;
+}
+
+@media (min-width: 790px) {
+	main {
+		min-height: 80vh;
+		padding-bottom: unset;
+		padding-top: 10vh;
+	}
+}

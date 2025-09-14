@@ -1,0 +1,76 @@
+import "./Connexion.css";
+import BtnConnexion from "../components/Buttons/ButtonConnexion";
+import InputPseudo from "../components/Input/InputPseudo";
+import InputMdp from "../components/Input/InputMdp";
+import CheckBoxRemember from "../components/Input/CheckBoxRemember";
+import { useEffect, useState } from "react";
+import useUserData from "../API/useUserData";
+import { useNavigate } from "react-router-dom";
+
+function Connexion({ setIsLogIn }) {
+	const [pseudo, setPseudo] = useState("");
+	const [mdp, setMdp] = useState("");
+	const [remember, setRemember] = useState(false);
+	const getUser = useUserData();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const saveUser = localStorage.getItem("pseudo");
+		if (saveUser) {
+			setPseudo(saveUser);
+			setRemember(true);
+		}
+	}, []);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		// au click requette pour savoir si pseudo et mdp son dans l'api
+		const userFound = getUser.find(
+			(u) => u.username === pseudo && u.password === mdp
+		);
+		if (userFound) {
+			console.log("connexion réussi :" + userFound);
+
+			if (remember) {
+				localStorage.setItem("pseudo", pseudo);
+			} else {
+				localStorage.removeItem("pseudo"); // suprimer du localestorage si la case et decocher
+			}
+			localStorage.setItem("userID", userFound.id);
+			setIsLogIn(true);
+			navigate("/");
+		} else {
+			alert("Identifiant invalide ");
+		}
+
+		const formDate = {
+			pseudo,
+			mdp,
+			remember,
+		};
+		console.log(formDate);
+	};
+
+	return (
+		<div className="login">
+			<form onSubmit={handleSubmit} className="login-form">
+				<InputPseudo
+					value={pseudo}
+					onChange={(e) => setPseudo(e.target.value)}
+				/>
+				<InputMdp
+					value={mdp}
+					onChange={(e) => setMdp(e.target.value)}
+				/>
+				<CheckBoxRemember
+					checked={remember}
+					onChange={(e) => setRemember(e.target.checked)}
+				/>
+				<BtnConnexion />
+			</form>
+		</div>
+	);
+}
+
+export default Connexion;

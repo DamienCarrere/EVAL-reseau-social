@@ -1,0 +1,37 @@
+.profil-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+	gap: 10px;
+}
+
+.info-profil {
+	padding: 20px;
+	background-color: #9e0e40;
+	color: white;
+	border-radius: 10px;
+	width: 250px;
+	border: 2px solid black;
+}
+
+.p-info {
+	font-size: 0.8rem;
+}
+
+.suivi {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 10px;
+}
+
+.p-suivi {
+	background-color: #9e0e40;
+	width: 150px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	border-radius: 5px;
+	border: 2px solid black;
+}
