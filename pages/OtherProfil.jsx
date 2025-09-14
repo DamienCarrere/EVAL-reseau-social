@@ -3,6 +3,7 @@ import PostSelected from "../components/Post/PostSelected";
 import ProfileLayout from "../components/Layout/ProfileLayout";
 import { FollowContext } from "../components/FollowContext/FollowContext";
 import { useContext, useEffect, useState } from "react";
+import "./OtherProfil.css";
 
 function OtherProfil() {
 	const { toggleFollow } = useContext(FollowContext);
@@ -32,7 +33,7 @@ function OtherProfil() {
 	return (
 		<>
 			<ProfileLayout user={user}>
-				<button onClick={handleFollow}>
+				<button className="btn-follow" onClick={handleFollow}>
 					{isFollowing ? "Unfollow" : "Follow"}
 				</button>
 			</ProfileLayout>

@@ -26,10 +26,17 @@ export default function SortFilter({ posts, onSort }) {
 	};
 
 	return (
-		<div>
-			<label htmlFor="sortSelect">Trier par :</label>
-			<select id="sortSelect" onChange={sortChange} defaultValue="">
-				<option value="" disabled>
+		<div className="sort-filter">
+			<label className="label-filter" htmlFor="sortSelect">
+				Trier par :
+			</label>
+			<select
+				className="select-filter"
+				id="sortSelect"
+				onChange={sortChange}
+				defaultValue=""
+			>
+				<option className="option-filter" value="" disabled>
 					-- Choisir un tri --
 				</option>
 				<option value="views-asc">↑ Vues (croissant) ↑</option>
