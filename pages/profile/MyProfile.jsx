@@ -5,7 +5,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 
 function MyProfile() {
 	const users = useUserData();
-	const user = users[0];
+	const user = users[26];
 
 	if (!user) return <p>Chargement...</p>;
 
