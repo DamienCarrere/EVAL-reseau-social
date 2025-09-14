@@ -1,34 +1,40 @@
 import useUserData from "../API/useUserData";
 import PostSelected from "../components/Post/PostSelected";
 import ProfileLayout from "../components/Layout/ProfileLayout";
-import SearchBar from "../components/SearchBar/SearchBar";
-import { useState } from "react";
+import { FollowContext } from "../components/FollowContext/FollowContext";
+import { useContext, useEffect, useState } from "react";
 
 function OtherProfil() {
+	const { toggleFollow } = useContext(FollowContext);
 	const users = useUserData();
 	const user = users[1];
+	const [isFollowing, setIsFollowing] = useState(false);
 
-	const [follow, setFollow] = useState(false);
+	useEffect(() => {
+		if (!user?.id) return;
+		const stored = localStorage.getItem(`isFollowing_${user.id}`);
+		if (stored === "true") setIsFollowing(true);
+	}, [user]);
 
 	const handleFollow = () => {
-		setFollow(true);
-	};
-
-	const handleUnfollow = () => {
-		setFollow(false);
+		if (isFollowing) {
+			toggleFollow(true);
+			localStorage.setItem(`isFollowing_${user.id}`, "false");
+		} else {
+			toggleFollow(false);
+			localStorage.setItem(`isFollowing_${user.id}`, "true");
+		}
+		setIsFollowing(!isFollowing);
 	};
 
 	if (!user) return <p>Chargement...</p>;
 
 	return (
 		<>
-			<SearchBar />
 			<ProfileLayout user={user}>
-				{follow ? (
-					<button onClick={handleUnfollow}>Unfollow</button>
-				) : (
-					<button onClick={handleFollow}>Follow</button>
-				)}
+				<button onClick={handleFollow}>
+					{isFollowing ? "Unfollow" : "Follow"}
+				</button>
 			</ProfileLayout>
 			<PostSelected userSelect={user.id} />
 		</>

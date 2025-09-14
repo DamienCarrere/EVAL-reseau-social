@@ -1,9 +1,11 @@
 import useUserData from "../../API/useUserData";
 import PostSelected from "../../components/Post/PostSelected";
 import ProfileLayout from "../../components/Layout/ProfileLayout";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import { FollowContext } from "../../components/FollowContext/FollowContext";
+import { useContext } from "react";
 
 function MyProfile() {
+	const { followers } = useContext(FollowContext);
 	const users = useUserData();
 	const user = users[26];
 
@@ -11,9 +13,8 @@ function MyProfile() {
 
 	return (
 		<>
-			<SearchBar />
 			<ProfileLayout user={user}>
-				<p className="p-suivi">suivi :</p>
+				<p className="p-suivi">suivi : {followers}</p>
 			</ProfileLayout>
 			<PostSelected userSelect={user.id} />
 		</>
