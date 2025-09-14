@@ -2,7 +2,7 @@ import useUserData from "../API/useUserData";
 import PostSelected from "../components/Post/PostSelected";
 import ProfileLayout from "../components/Layout/ProfileLayout";
 import { FollowContext } from "../components/FollowContext/FollowContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 function OtherProfil() {
 	const { toggleFollow } = useContext(FollowContext);
@@ -10,12 +10,24 @@ function OtherProfil() {
 	const user = users[1];
 	const [isFollowing, setIsFollowing] = useState(false);
 
-	if (!user) return <p>Chargement...</p>;
+	useEffect(() => {
+		if (!user?.id) return;
+		const stored = localStorage.getItem(`isFollowing_${user.id}`);
+		if (stored === "true") setIsFollowing(true);
+	}, [user]);
 
 	const handleFollow = () => {
-		toggleFollow(isFollowing); // met a jour le compteur
-		setIsFollowing(!isFollowing); // met a jour le boutton
+		if (isFollowing) {
+			toggleFollow(true);
+			localStorage.setItem(`isFollowing_${user.id}`, "false");
+		} else {
+			toggleFollow(false);
+			localStorage.setItem(`isFollowing_${user.id}`, "true");
+		}
+		setIsFollowing(!isFollowing);
 	};
+
+	if (!user) return <p>Chargement...</p>;
 
 	return (
 		<>
