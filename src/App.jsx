@@ -16,36 +16,23 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Header />
-
 				<main>
 					<Routes>
 						{!isLogIn ? (
 							<>
-								<Route
-									path="/"
-									element={
-										<Connexion setIsLogIn={setIsLogIn} />
-									}
-								/>
+								<Route path="/" element={<Connexion setIsLogIn={setIsLogIn} />} />
 								<Route path="*" element={<Navigate to="/" />} />
 							</>
 						) : (
 							<>
 								<Route path="/" element={<Accueil />} />
-								<Route
-									path="/profile"
-									element={<MyProfile />}
-								/>
-								<Route
-									path="/otherProfil"
-									element={<OtherProfil />}
-								/>
+								<Route path="/profile" element={<MyProfile />} />
+								<Route path="/otherProfil" element={<OtherProfil />} />
 								<Route path="*" element={"Error 404"} />
 							</>
 						)}
 					</Routes>
 				</main>
-
 				<Footer setIsLogIn={setIsLogIn} isLogIn={isLogIn} />
 			</BrowserRouter>
 		</>
