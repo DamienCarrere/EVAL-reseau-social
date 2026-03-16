@@ -9,11 +9,7 @@ export default function PostCard({ user, post }) {
 		<section className="sectionCard">
 			<div className="card">
 				<div className="divImg">
-					<img
-						src={user.image}
-						alt={user.firstName}
-						className="imgProfile"
-					></img>
+					<img src={user.image} alt={user.firstName} className="imgProfile"/>
 				</div>
 				<div className="divInfo">
 					<p className="username">{user.username}</p>
@@ -28,12 +24,8 @@ export default function PostCard({ user, post }) {
 				<div className="divButtons">
 					<button className="button-post">💬</button>
 					<button className="button-post">🔁</button>
-					<button className="button-post">
-						👍 {post.reactions.likes}
-					</button>
-					<button className="button-post">
-						👎 {post.reactions.dislikes}
-					</button>
+					<button className="button-post">👍 {post.reactions.likes}</button>
+					<button className="button-post">👎 {post.reactions.dislikes}</button>
 				</div>
 			</div>
 		</section>
